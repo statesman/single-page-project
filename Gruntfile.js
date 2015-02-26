@@ -96,7 +96,7 @@ module.exports = function(grunt) {
         },
         src: 'public',
         dest: '/stage_aas/projects/single-use-project',
-        exclusions: ['dist/tmp'],
+        exclusions: ['dist/tmp','Thumbs.db'],
         simple: false,
         useList: false
       },
@@ -109,7 +109,7 @@ module.exports = function(grunt) {
         },
         src: 'public',
         dest: '/stage_aas/projects/single-use-project-prod/',
-        exclusions: ['dist/tmp'],
+        exclusions: ['dist/tmp','Thumbs.db'],
         simple: false,
         useList: false
       }
