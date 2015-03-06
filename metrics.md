@@ -1,4 +1,4 @@
-How we do statemsan.com metrics
+How we do statesman.com metrics
 ==========================
 
 By Christian McDonald, 2015-03-05 update.
