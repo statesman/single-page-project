@@ -1,3 +1,8 @@
+
+
+var fs = require("fs");
+
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -92,10 +97,10 @@ module.exports = function(grunt) {
         auth: {
           host: 'host.coxmediagroup.com',
           port: 21,
-          authKey: 'key1'
+          authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/single-use-project',
+        dest: '/stage_aas/projects/single-page-project',
         exclusions: ['dist/tmp','Thumbs.db'],
         simple: false,
         useList: false
@@ -105,30 +110,31 @@ module.exports = function(grunt) {
         auth: {
           host: 'host.coxmediagroup.com',
           port: 21,
-          authKey: 'key1'
+          authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/single-use-project-prod/',
+        dest: '/stage_aas/projects/single-page-project-prod/',
         exclusions: ['dist/tmp','Thumbs.db'],
         simple: false,
         useList: false
       }
     },
 
-
+    // be sure to set publishing paths
     slack: {
-      options: {
-        endpoint: 'https://hooks.slack.com/services/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',
-        channel: '#bakery', // optional
-        username: 'gruntbot', // optional
-        icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png'
-      },
-      message: {
-        text: 'Message to send. {{message}}' // {{message}} can be replaced with --message='some text' option from command line
-      }
+        options: {
+          endpoint: fs.readFileSync('.slack', {encoding: 'utf8'}),
+          channel: '#bakery',
+          username: 'gruntbot',
+          icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png'
+        },
+        stage: {
+          text: 'Project published to stage: http://stage.host.coxmediagroup.com/aas/projects/single-page-project/ {{message}}'
+        },
+        prod: {
+          text: 'Project published to prod: http://projects.statesman.com/ {{message}}'
+        }
     }
-
-
 
   });
 
@@ -143,8 +149,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-slack-hook');
 
   grunt.registerTask('default', ['copy', 'less', 'jshint','bootlint','uglify']);
-  grunt.registerTask('stage', ['default','ftpush:stage']);
-  grunt.registerTask('prod', ['default','ftpush:prod']);
-  grunt.registerTask('slackmsg', ['slack']);
+  grunt.registerTask('stage', ['default','ftpush:stage','slack:stage']);
+  grunt.registerTask('prod', ['default','ftpush:prod','slack:prod']);
 
 };
