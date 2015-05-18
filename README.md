@@ -18,3 +18,23 @@ Framework for a single page project, though it could be multiple pages. Just les
 	* less: for less css source files.
 * use ftpush grunt task to publish public.
 	* The path is in `Gruntfile.js`. Add the username/password into a file called .ftppass as per [ftpush docs](https://www.npmjs.com/package/grunt-ftpush). Make sure that file is in the .gitignore.
+
+## Configuratios
+
+### ftpush
+
+You'll need an .ftppass file with credentials for publishing.
+
+```
+{
+  "key": {
+    "username": "username",
+    "password": "password"
+  }
+}
+```
+
+### slack msg
+
+Need a .slack file with the Webhook URL from Slack configurations
+

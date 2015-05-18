@@ -28,6 +28,7 @@ $RECYCLE.BIN/
 node_modules
 .ftppass
 .grunt/
+.slack
 
 ### Bower ###
 bower_components
