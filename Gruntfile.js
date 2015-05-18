@@ -113,6 +113,18 @@ module.exports = function(grunt) {
         simple: false,
         useList: false
       }
+    },
+
+    slack: {
+        options: {
+            endpoint: 'https://hooks.slack.com/services/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',
+            channel: '#bakery', // optional
+            username: 'gruntbot', // optional
+            icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png' // if icon_emoji not specified
+        },
+        your_raget: {
+            text: 'this is @crit message' // {{message}} can be replaced with --message='some text' option from command line
+        }
     }
 
 
@@ -126,9 +138,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-bootlint');
+  grunt.loadNpmTasks('grunt-slack-hook');
 
   grunt.registerTask('default', ['copy', 'less', 'jshint','bootlint','uglify']);
   grunt.registerTask('stage', ['default','ftpush:stage']);
   grunt.registerTask('prod', ['default','ftpush:prod']);
+  grunt.registerTask('slackmsg', ['slack']);
 
 };
