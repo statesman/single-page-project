@@ -36,5 +36,5 @@ You'll need an .ftppass file with credentials for publishing.
 
 ### slack msg
 
-Need a .slack file with the Webhook URL from Slack configurations
+Need a .slack file with the Webhook URL from Slack configurations.
 
