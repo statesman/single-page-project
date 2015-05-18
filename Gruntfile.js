@@ -115,17 +115,19 @@ module.exports = function(grunt) {
       }
     },
 
+
     slack: {
-        options: {
-            endpoint: 'https://hooks.slack.com/services/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',
-            channel: '#bakery', // optional
-            username: 'gruntbot', // optional
-            icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png' // if icon_emoji not specified
-        },
-        your_raget: {
-            text: 'this is @crit message' // {{message}} can be replaced with --message='some text' option from command line
-        }
+      options: {
+        endpoint: 'https://hooks.slack.com/services/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',
+        channel: '#bakery', // optional
+        username: 'gruntbot', // optional
+        icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png'
+      },
+      message: {
+        text: 'Message to send. {{message}}' // {{message}} can be replaced with --message='some text' option from command line
+      }
     }
+
 
 
   });
