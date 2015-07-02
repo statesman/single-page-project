@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <?php
   $meta = array(
-    "title" => "2015 Statesman Social Media Awards | Statesman.com",
-    "description" => "The Austin American-Statesman is honoring the best in social media in Central Texas. Use our online nomination form to nominate your favorite person, company or group for a Statesman Social Media Award.",
-    "thumbnail" => "http://projects.statesman.com/then-and-now/paramount/assets/share.png", // needs update
+    "title" => "Single page project | Statesman.com",
+    "description" => "Description for single-page-project.",
+    "thumbnail" => "http://projects.statesman.com/project_path/assets/share.png", // needs update
     "shortcut_icon" => "http://media.cmgdigital.com/shared/theme-assets/242014/www.statesman.com_5126cb2068bd43d1ab4e17660ac48255.ico",
     "apple_touch_icon" => "http://media.cmgdigital.com/shared/theme-assets/242014/www.statesman.com_fa2d2d6e73614535b997734c7e7d2287.png",
-    "url" => "http://projects.statesman.com/ssma/",
+    "url" => "http://projects.statesman.com/project_path/",
     "twitter" => "statesman"
   );
 ?>
