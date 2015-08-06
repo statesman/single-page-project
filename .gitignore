@@ -43,7 +43,6 @@ bower_components
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -57,3 +56,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Build components that don't need to be saved
+dist
