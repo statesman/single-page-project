@@ -8,7 +8,7 @@
     "title" => "Single page project | Statesman.com",
     "description" => "Description for single-page-project.",
     "thumbnail" => "http://projects.statesman.com/project_path/assets/share.png", // needs update
-    "shortcut_icon" => "http://media.cmgdigital.com/shared/theme-assets/242014/www.statesman.com_5126cb2068bd43d1ab4e17660ac48255.ico",
+    "shortcut_icon" => "http://media.cmgdigital.com/shared/media/2015-11-16-11-32-05/web/site/www_mystatesman_com/images/favicon.ico",
     "apple_touch_icon" => "http://media.cmgdigital.com/shared/theme-assets/242014/www.statesman.com_fa2d2d6e73614535b997734c7e7d2287.png",
     "url" => "http://projects.statesman.com/project_path/",
     "twitter" => "statesman"
