@@ -7,14 +7,21 @@ Framework for a single page project, though it could be multiple pages. Just les
 
 * use `package.json` and `npm install`
 * use `bower.json` and `bower install`
-* use a public folder for the published files:
+* You need the `.ftppass` and `.slack` files described below.
+* Run the default grunt task.
+
+### Public folder
+There is a `public` folder that has the published files:
 	* assets: images and other accces
 	* dist: where js and css is compiled
 	* fonts: for font-awesome
 	* includes: files for metrics, advertising and other includes
-* use a src for build components
-	* js: for project specific files
-	* less: for less css source files.
+
+### Src folder
+The `src` folder is for components that are used by grunt tasks and copied into the `public/dist` folder:
+* js: for project specific files. `main.js` will get minified into the dist folder.
+* less: for less css source files, based on [bootstrap](http://getbootstrap.com/getting-started/).
+
 
 ## Configurations
 
