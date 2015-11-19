@@ -1,7 +1,7 @@
 How we do statesman.com metrics
 ==========================
 
-By Christian McDonald, 2015-03-05 update.
+By Christian McDonald, 2015-11-19 update.
 
 Darius asked for some explanation about how we use sitecatalyst tags in our projects. I'll try to offer some background here.
 
@@ -35,6 +35,7 @@ The `metrics.inc` is the most important one, in that it has all the code that fi
 * projectChannel: is the main category
 * projectCategory: is a sub category if needed
 * projectSubCategory: is a name for a specific project
+* projectByline: is lower case name of reporter. "james barragan, tony plohetski, jazmine ulloa"
 
 
 ### Improvements needed
