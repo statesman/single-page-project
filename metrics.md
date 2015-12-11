@@ -40,7 +40,7 @@ The `metrics.inc` is the most important one, in that it has all the code that fi
 
 ### Improvements needed
 
-* We could/should probably add a projectByline project variable to this which we could then pull into prop23 and eVar23.
+* While projectByline has been added, it should probably pull from a single place on the page instead of being repeated in `project-metrics.inc`
 * We now use chartbeat "publisher" which has some additional code to capture more material. I've never implemented it.
 * There are probably other issues or improvement that could be made if we could reach the right person at CMG Audience/Development.
 

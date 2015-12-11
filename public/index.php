@@ -78,9 +78,9 @@
     </div>
   </div>
 </nav>
-<div id="back">
 
-  <div class="container">
+  <article class="container">
+
     <div class="row">
       <div class="col-lg-12 header">
       <h1 id="pagetitle">Title</h1>
@@ -90,7 +90,7 @@
     </div>
 
 
-  </div>
+  </article>
 
     <!-- bottom matter -->
     <?php include "includes/banner-ad.inc";?>
@@ -99,8 +99,6 @@
     <?php include "includes/metrics.inc"; ?>
 
     <script src="dist/scripts.js"></script>
-
-</div>
 
   <?php if($_SERVER['SERVER_NAME'] === 'localhost'): ?>
     <script src="//localhost:35729/livereload.js"></script>
