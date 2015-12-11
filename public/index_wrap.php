@@ -36,6 +36,8 @@
   <meta name="twitter:url" content="<?php print $meta['url']; ?>" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://d1vp8av3j44ch7.cloudfront.net/wrap.css" rel="stylesheet">
   <link rel="stylesheet" href="dist/style.css">
 
   <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
@@ -49,6 +51,8 @@
 
 </head>
 <body>
+  <script src="http://d1vp8av3j44ch7.cloudfront.net/wrap.js"></script>
+  <script src="http://d1vp8av3j44ch7.cloudfront.net/modals.js"></script>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -82,7 +86,7 @@
   <article class="container">
 
     <div class="row">
-      <div class="col-lg-12 interative-header">
+      <div class="col-lg-12 interactive-header">
       <h1 id="pagetitle">Title</h1>
       <p class="author">By So Andso</p>
       <p>Lucas ipsum dolor sit amet boba calrissian amidala sith dooku solo moff organa obi-wan windu. Gamorrean binks wedge darth. Mon darth mon kit ponda solo. Moff watto ackbar mothma moff anakin. Lando skywalker lars fett calrissian lars organa. Organa kenobi wedge darth jawa skywalker anakin. Twi'lek kit darth calamari lando kamino droid. Darth jawa fett grievous maul. Palpatine obi-wan leia tusken raider dagobah. Twi'lek qui-gon boba antilles yoda thrawn. Wampa luuke wampa skywalker. Moff ponda ackbar dagobah kit lobot jinn solo.</p>
@@ -103,5 +107,6 @@
   <?php if($_SERVER['SERVER_NAME'] === 'localhost'): ?>
     <script src="//localhost:35729/livereload.js"></script>
   <?php endif; ?>
+  <script src="http://d1vp8av3j44ch7.cloudfront.net/access-meter.js"></script>
 </body>
 </html>
