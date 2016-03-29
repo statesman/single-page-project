@@ -88,6 +88,38 @@ module.exports = function(grunt) {
       }
     },
 
+    // BrowserSync
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src : ['dist/**/*']
+        },
+        options: {
+          proxy: 'single-page-project.projects.dev',
+          open: "ui",
+          ghostMode: {
+            clicks: true,
+            forms: true,
+            scroll: true
+          },
+          browser: "google chrome"
+        }
+      }
+    },
+
+    // Concurrently run BrowserSync, watch
+    concurrent: {
+      dev: {
+        options: {
+          logConcurrentOutput: true
+        },
+        tasks: ['browserSync', 'watch']
+      },
+      build: {
+        tasks: ['build:styles', 'build:scripts', 'build:fonts']
+      }
+    },
+
     // stage path needs to be set
     ftpush: {
       stage: {
@@ -144,8 +176,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-bootlint');
   grunt.loadNpmTasks('grunt-slack-hook');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
   grunt.registerTask('default', ['copy', 'less', 'jshint','bootlint','uglify']);
+  grunt.registerTask('dev', ['browserSync','watch']);
   grunt.registerTask('stage', ['default','ftpush:stage','slack:stage']);
   grunt.registerTask('prod', ['default','ftpush:prod','slack:prod']);
 
