@@ -126,10 +126,10 @@ module.exports = function(grunt) {
           icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png'
         },
         stage: {
-          text: 'Project published to stage: http://stage.host.coxmediagroup.com/aas/projects/test/single-page-project/ {{message}}'
+          text: 'Project published to stage: http://stage.host.coxmediagroup.com/aas/projects/test/single-page-project/01.php {{message}}'
         },
         prod: {
-          text: 'Project published to prod: http://projects.statesman.com/test/single-page-project/ {{message}}'
+          text: 'Project published to prod: http://projects.statesman.com/test/single-page-project/01.php {{message}}'
         }
     }
 
