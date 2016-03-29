@@ -97,7 +97,7 @@ module.exports = function(grunt) {
           authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/single-page-project',
+        dest: '/stage_aas/projects/test/single-page-project/',
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -110,7 +110,7 @@ module.exports = function(grunt) {
           authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/single-page-project-prod/',
+        dest: '/prod_aas/projects/test/single-page-project/',
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -126,10 +126,10 @@ module.exports = function(grunt) {
           icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png'
         },
         stage: {
-          text: 'Project published to stage: http://stage.host.coxmediagroup.com/aas/projects/single-page-project/ {{message}}'
+          text: 'Project published to stage: http://stage.host.coxmediagroup.com/aas/projects/test/single-page-project/ {{message}}'
         },
         prod: {
-          text: 'Project published to prod: http://projects.statesman.com/ {{message}}'
+          text: 'Project published to prod: http://projects.statesman.com/test/single-page-project/ {{message}}'
         }
     }
 
