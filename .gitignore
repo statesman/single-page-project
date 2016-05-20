@@ -30,11 +30,6 @@ node_modules
 .grunt/
 .slack
 
-### Bower ###
-bower_components
-
-# Created by https://www.gitignore.io
-
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -59,3 +54,4 @@ Temporary Items
 
 # Build components that don't need to be saved
 dist
+public/fonts/index.html
