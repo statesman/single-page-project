@@ -1,6 +1,13 @@
 {
   "name": "project_name",
-  "description": "Caspio combination database",
+  "description": "Add description of the project.",
+  "version": "1.2.0",
+  "author": "Statesman Interactives <interactives@statesman.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:statesman/single-page-project.git"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-bootlint": "^0.7.0",
@@ -9,10 +16,10 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-ftpush": "^0.3.3",
-    "grunt-slack-hook": "0.0.4"
-  },
-  "dependencies": {
+    "grunt-slack-hook": "0.0.4",
     "grunt-contrib-jshint": "^0.11.0",
     "jshint": "^2.6.0"
+  },
+  "dependencies": {
   }
 }
