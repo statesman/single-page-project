@@ -6,9 +6,10 @@ Framework for a single page project, though it could be multiple pages. Just les
 ## Steps when you set up a project
 
 * use `package.json` and `npm install`
-* use `bower.json` and `bower install`
 * You need the `.ftppass` and `.slack` files described below.
 * Run the default grunt task.
+
+(At one point we used bower to pull in font-awesome, bootstrap and jquery, but these are now pulled in through npm.)
 
 ### Public folder
 There is a `public` folder that has the published files:

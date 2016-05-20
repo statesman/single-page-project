@@ -30,11 +30,6 @@ node_modules
 .grunt/
 .slack
 
-### Bower ###
-bower_components
-
-# Created by https://www.gitignore.io
-
 ### OSX ###
 .DS_Store
 .AppleDouble
