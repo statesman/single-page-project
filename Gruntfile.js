@@ -1,7 +1,11 @@
 var fs = require("fs");
+var request = require("request");
 
 module.exports = function(grunt) {
   'use strict';
+
+  // this is the directory path to your project on the stage/prod servers
+  var site_path = "single-page-project";
 
   // Project configuration.
   grunt.initConfig({
@@ -115,24 +119,51 @@ module.exports = function(grunt) {
         simple: false,
         useList: false
       }
-    },
-
-    // be sure to set publishing paths
-    slack: {
-        options: {
-          endpoint: fs.readFileSync('.slack', {encoding: 'utf8'}),
-          channel: '#bakery',
-          username: 'gruntbot',
-          icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png'
-        },
-        stage: {
-          text: 'Project published to stage: http://stage.host.coxmediagroup.com/aas/projects/single-page-project/ {{message}}'
-        },
-        prod: {
-          text: 'Project published to prod: http://projects.statesman.com/ {{message}}'
-        }
     }
 
+
+
+  });
+
+  // register a custom task to hit slack
+  grunt.registerTask('slack', function(where_dis_go) {
+
+      // first, check to see if there's a .slack file
+      // (this file has the webhook endpoint)
+      if(grunt.file.isFile('.slack')) {
+
+          // homeboy here runs async, so
+          var done = this.async();
+
+          // prod or stage?
+          var ftp_path = where_dis_go === "prod" ? "http://projects.statesman.com/news/" + site_path : "http://stage.host.coxmediagroup.com/aas/projects/news/" + site_path;
+
+          // do whatever makes you feel happy here
+          var payload = {
+              "text": "yo dawg i heard you like pushing code to *"+site_path+"*: " + ftp_path,
+              "channel": "#bakery",
+              "username": "Xzibit",
+              "icon_url": "http://projects.statesman.com/slack/icon_img/xzibit.jpg"
+          };
+
+          // send the request
+          request.post(
+              {
+                  url: fs.readFileSync('.slack', {encoding: 'utf8'}),
+                  json: payload
+              },
+              function callback(err, res, body) {
+                  done();
+                  if (body !== "ok") {
+                      return console.error('upload failed:', body);
+                  }
+              console.log('we slacked it up just fine people, good work');
+          });
+      }
+      // if no .slack file, log it
+      else {
+          grunt.log.warn('No .slack file exists. Skipping Slack notification.');
+      }
   });
 
   // Load the task plugins
@@ -143,7 +174,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-bootlint');
-  grunt.loadNpmTasks('grunt-slack-hook');
 
   grunt.registerTask('default', ['copy', 'less', 'jshint','bootlint','uglify']);
   grunt.registerTask('stage', ['default','ftpush:stage','slack:stage']);
