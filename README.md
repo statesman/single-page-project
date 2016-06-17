@@ -5,18 +5,20 @@ Framework for a single page project, though it could be multiple pages. Just les
 
 ## Steps when you set up a project
 
-* use `package.json` and `npm install`
+* Use `package.json` and run `npm install`
 * You need the `.ftppass` and `.slack` files described below.
-* Run the default grunt task.
+* Update the `slug` and `projectsDirectory` variables in `Gruntfile.js`.
+* Update the `thumbnail` and `url` variables at the top of `index.php`.
+* Run the default `grunt` task.
 
 (At one point we used bower to pull in font-awesome, bootstrap and jquery, but these are now pulled in through npm.)
 
 ### Public folder
 There is a `public` folder that has the published files:
-	* assets: images and other accces
-	* dist: where js and css is compiled
-	* fonts: for font-awesome
-	* includes: files for metrics, advertising and other includes
+* assets: images and other accces
+* dist: where js and css is compiled
+* fonts: for font-awesome
+* includes: files for metrics, advertising and other includes
 
 ### Src folder
 The `src` folder is for components that are used by grunt tasks and copied into the `public/dist` folder:
