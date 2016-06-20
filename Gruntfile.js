@@ -4,8 +4,18 @@ var request = require("request");
 module.exports = function(grunt) {
   'use strict';
 
-  // this is the directory path to your project on the stage/prod servers
-  var site_path = "single-page-project";
+  // This is the slug title of the project
+  // For example, "single-page-project"
+  var slug = "";
+
+  // This is the projects folder where the project will be deployed
+  // For example:
+  //     Enter "news" for http://projects.statesman.com/news
+  //     Enter "sports" for http://projects.statesman.com/sports
+  var projectsDirectory = "";
+
+  // This is the directory path to your project on the stage/prod servers
+  var site_path = projectsDirectory + "/" + slug;
 
   // Project configuration.
   grunt.initConfig({
@@ -101,7 +111,7 @@ module.exports = function(grunt) {
           authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/single-page-project',
+        dest: '/stage_aas/projects/' + site_path,
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -114,7 +124,7 @@ module.exports = function(grunt) {
           authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/single-page-project-prod/',
+        dest: '/stage_aas/projects/' + site_path,
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -136,11 +146,11 @@ module.exports = function(grunt) {
           var done = this.async();
 
           // prod or stage?
-          var ftp_path = where_dis_go === "prod" ? "http://projects.statesman.com/news/" + site_path : "http://stage.host.coxmediagroup.com/aas/projects/news/" + site_path;
+          var ftp_path = where_dis_go === "prod" ? "http://projects.statesman.com/" + site_path : "http://stage.host.coxmediagroup.com/aas/projects/" + site_path;
 
           // do whatever makes you feel happy here
           var payload = {
-              "text": "yo dawg i heard you like pushing code to *"+site_path+"*: " + ftp_path,
+              "text": "yo dawg i heard you like pushing code to *" + slug + "*: " + ftp_path,
               "channel": "#bakery",
               "username": "Xzibit",
               "icon_url": "http://projects.statesman.com/slack/icon_img/xzibit.jpg"
