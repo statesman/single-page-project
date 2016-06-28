@@ -124,7 +124,7 @@ module.exports = function(grunt) {
           authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/' + site_path,
+        dest: '/prod_aas/projects/' + site_path,
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -185,7 +185,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-bootlint');
 
-  grunt.registerTask('default', ['copy', 'less', 'jshint','bootlint','uglify']);
+  grunt.registerTask('default', ['copy', 'less', 'jshint', 'bootlint', 'uglify']);
   grunt.registerTask('stage', ['default','ftpush:stage','slack:stage']);
   grunt.registerTask('prod', ['default','ftpush:prod','slack:prod']);
 
