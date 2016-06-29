@@ -15,7 +15,7 @@ module.exports = function(grunt) {
   var projectsDirectory = "";
 
   // This is the directory path to your project on the stage/prod servers
-  var site_path = projectsDirectory + "/" + slug;
+  var site_path = projectsDirectory + "/" + slug + "/";
 
   // Project configuration.
   grunt.initConfig({
