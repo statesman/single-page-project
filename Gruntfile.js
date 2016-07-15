@@ -190,7 +190,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-bootlint');
 
-  grunt.registerTask('default', ['copy', 'less', 'jshint','bootlint','uglify']);
+  grunt.registerTask('default', ['copy', 'less', 'jshint', 'bootlint', 'uglify']);
   grunt.registerTask('stage', ['default','ftpush:stage','slack:stage']);
   grunt.registerTask('prod', ['default','ftpush:prod','slack:prod']);
 
