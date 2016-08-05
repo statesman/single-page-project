@@ -184,8 +184,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-bootlint');
 
