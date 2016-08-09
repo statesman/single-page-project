@@ -46,3 +46,7 @@ The path is in `Gruntfile.js`. Add the username/password into a file called `.ft
 
 The `grunt-slack-hook` plugin let's us publish finished url to slack as part of ftpush. Needs a .slack file with the Webhook URL from Slack configurations. Just a single line with that url and no return.
 
+
+### editorconfig
+
+The `.editorconfig` file defines indentation and text editor styles. Install [editorconfig-sublime](https://github.com/sindresorhus/editorconfig-sublime) to use in SublimeText or `apm install editorconfig` to use in Atom. Read more about editorconfig [here](http://editorconfig.org/).
