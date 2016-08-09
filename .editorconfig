@@ -19,3 +19,8 @@ indent_size = 4
 [*.js]
 indent_style = space
 indent_size = 2
+
+# .less files get 2-space indentation
+[*.less]
+indent_style = space
+indent_size = 2
