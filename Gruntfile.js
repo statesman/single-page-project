@@ -8,13 +8,13 @@ module.exports = function(grunt) {
     // the site section to publish to
     site_dir: "news",
 
-    //the site section to publish to
+    // the endpoint to publish to
     site_path: "single-page-project",
 
     // name of your notifier slack bot
-    slack_username: "NeckbeardBot",
+    slack_username: "Neckbeard Bot",
 
-    // slack emoji
+    // slack emoji (don't forget the colons)
     slack_icon_emoji: ":neckbeard:"
   };
 
