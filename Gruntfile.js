@@ -4,30 +4,20 @@ var request = require("request");
 module.exports = function(grunt) {
   'use strict';
 
-  /*
-    ~~~ set configuration here ~~~
-
-    - site_dir: the site section to publish to
-      e.g., "news" in http://projects.statesman.com/news/cps-missed-signs/
-
-    - site_path: the URL endpoint to publish to
-      e.g., "cps-missed-signs" in http://projects.statesman.com/news/cps-missed-signs/
-
-    - slack_username: what slack username do you want to use
-
-    - slack_icon_emoji: what slack icon do you want to use
-      reference: http://www.emoji-cheat-sheet.com/
-      (don't forget to bracket with colons)
-  */
-
   var config = {
+    // the site section to publish to
     site_dir: "news",
+
+    // the endpoint to publish to
     site_path: "single-page-project",
-    slack_username: "NeckbeardBot",
+
+    // name of your notifier slack bot
+    slack_username: "Neckbeard Bot",
+
+    // slack emoji (don't forget the colons)
     slack_icon_emoji: ":neckbeard:"
   };
 
-  // Project configuration.
   grunt.initConfig({
 
     // Copy FontAwesome files to the fonts/ directory
@@ -63,7 +53,8 @@ module.exports = function(grunt) {
         src: ['src/js/**.js']
       }
     },
-    // Use Uglify to bundle up a pym file for the home page
+
+    // Squish all that js into one file
     uglify: {
       options: {
         sourceMap: true
@@ -72,6 +63,7 @@ module.exports = function(grunt) {
         files: {
           'public/dist/scripts.js': [
             'node_modules/jquery/dist/jquery.js',
+            'node_modules/underscore/underscore.js',
             'node_modules/bootstrap/js/button.js',
             'node_modules/bootstrap/js/collapse.js',
             'node_modules/bootstrap/js/dropdown.js',
@@ -97,7 +89,7 @@ module.exports = function(grunt) {
         livereload: true
       },
       markup: {
-        files: ['public/*.php','public/includes/*.inc']
+        files: ['public/*.php', 'public/includes/*.inc']
       },
       scripts: {
         files: ['src/js/*.js'],
@@ -118,7 +110,7 @@ module.exports = function(grunt) {
         },
         src: 'public',
         dest: ['/stage_aas/projects', config.site_dir, config.site_path].join("/"),
-        exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
+        exclusions: ['dist/tmp', 'Thumbs.db', '.DS_Store'],
         simple: false,
         useList: false
       },
@@ -130,7 +122,7 @@ module.exports = function(grunt) {
         },
         src: 'public',
         dest: ['/prod_aas/projects', config.site_dir, config.site_path].join("/"),
-        exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
+        exclusions: ['dist/tmp', 'Thumbs.db', '.DS_Store'],
         simple: false,
         useList: false
       }
@@ -141,41 +133,42 @@ module.exports = function(grunt) {
   // register a custom task to hit slack
   grunt.registerTask('slack', function(where_dis_go) {
 
-      // first, check to see if there's a .slack file
-      // (this file has the webhook endpoint)
-      if(grunt.file.isFile('.slack')) {
+    // first, check to see if there's a .slack file
+    // (this file has the webhook endpoint)
+    if (grunt.file.isFile('.slack')) {
 
-          // homeboy here runs async, so
-          var done = this.async();
+      // homeboy here runs async, so
+      var done = this.async();
 
-          // prod or stage?
-          var ftp_path = where_dis_go === "prod" ? ["http://projects.statesman.com", config.site_dir, config.site_path].join("/") : ["http://stage.host.coxmediagroup.com/aas/projects", config.site_dir, config.site_path].join("/");
+      // prod or stage?
+      var ftp_path = where_dis_go === "prod" ? ["http://projects.statesman.com", config.site_dir, config.site_path].join("/") : ["http://stage.host.coxmediagroup.com/aas/projects", config.site_dir, config.site_path].join("/");
 
-          var payload = {
-            "text": "hello yes i am pushing code to *" + config.site_path +  "*: " + ftp_path,
-            "channel": "#bakery",
-            "username": config.slack_username,
-            "icon_emoji": config.slack_icon_emoji
-          };
+      var payload = {
+        "text": "hello yes i am pushing code to *" + config.site_path + "*: " + ftp_path,
+        "channel": "#bakery",
+        "username": config.slack_username,
+        "icon_emoji": config.slack_icon_emoji
+      };
 
-          // send the request
-          request.post(
-              {
-                  url: fs.readFileSync('.slack', {encoding: 'utf8'}),
-                  json: payload
-              },
-              function callback(err, res, body) {
-                  done();
-                  if (body !== "ok") {
-                      return console.error('upload failed:', body);
-                  }
-              console.log('we slacked it up just fine people, good work');
-          });
-      }
-      // if no .slack file, log it
-      else {
-          grunt.log.warn('No .slack file exists. Skipping Slack notification.');
-      }
+      // send the request
+      request.post({
+          url: fs.readFileSync('.slack', {
+            encoding: 'utf8'
+          }),
+          json: payload
+        },
+        function callback(err, res, body) {
+          done();
+          if (body !== "ok") {
+            return console.error('upload failed:', body);
+          }
+          console.log('we slacked it up just fine people, good work');
+        });
+    }
+    // if no .slack file, log it
+    else {
+      grunt.log.warn('No .slack file exists. Skipping Slack notification.');
+    }
   });
 
   // Load the task plugins
@@ -188,7 +181,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bootlint');
 
   grunt.registerTask('default', ['copy', 'less', 'jshint', 'bootlint', 'uglify']);
-  grunt.registerTask('stage', ['default','ftpush:stage','slack:stage']);
-  grunt.registerTask('prod', ['default','ftpush:prod','slack:prod']);
+  grunt.registerTask('stage', ['default', 'ftpush:stage', 'slack:stage']);
+  grunt.registerTask('prod', ['default', 'ftpush:prod', 'slack:prod']);
 
 };
