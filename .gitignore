@@ -54,4 +54,5 @@ Temporary Items
 
 # Build components that don't need to be saved
 dist
-public/fonts/index.html
+public/fonts/
+
