@@ -42,7 +42,7 @@ module.exports = function(grunt) {
           cleancss: false
         },
         files: {
-          "public/dist/style.css": "src/less/style.less"
+          "public/dist/style.css": ["src/less/style.less"]
         }
       }
     },
