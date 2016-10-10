@@ -5,13 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <?php
   // update these fields
+  // assets_path is after projects.statesman.com to root of project
   $meta = array(
+    "url" => "http://projects.statesman.com/news/single-page-project/",
+    "assets_path" => "assets/",
     "title" => "Single page project | Statesman.com",
     "description" => "Description for single-page-project.",
-    "thumbnail" => "http://projects.statesman.com/site_path/assets/share.jpg",
-    "shortcut_icon" => "http://media.cmgdigital.com/shared/media/2015-08-28-16-58-55/web/site/www_mystatesman_com/images/favicon.ico",
-    "apple_touch_icon" => "http://media.cmgdigital.com/shared/theme-assets/242014/www.statesman.com_fa2d2d6e73614535b997734c7e7d2287.png",
-    "url" => "http://projects.statesman.com/news/single-page-project/",
+    "thumbnail" => "share.jpg",
+    "shortcut_icon" => "favicon.ico",
+    "apple_touch_icon" => "favicon-apple-touch-icon.png",
     "twitter" => "aasinteractive",
     "authors" => array(
         array("name" => "John Doe", "twitter" => "john_doe"),
@@ -26,8 +28,8 @@
 ?>
 
   <title>Interactive: <?php print $meta['title']; ?> | Austin American-Statesman</title>
-  <link rel="shortcut icon" href="<?php print $meta['shortcut_icon']; ?>" />
-  <link rel="apple-touch-icon" href="<?php print $meta['apple_touch_icon']; ?>" />
+  <link rel="shortcut icon" href="<?php print $meta['url']; ?><?php print $meta['assets_path']; ?><?php print $meta['shortcut_icon']; ?>" />
+  <link rel="apple-touch-icon" href="<?php print $meta['url']; ?><?php print $meta['assets_path']; ?><?php print $meta['apple_touch_icon']; ?>" />
 
   <link rel="canonical" href="<?php print $meta['url']; ?>" />
 
@@ -35,14 +37,14 @@
 
   <meta property="og:title" content="<?php print $meta['title']; ?>"/>
   <meta property="og:description" content="<?php print $meta['description']; ?>"/>
-  <meta property="og:image" content="<?php print $meta['thumbnail']; ?>"/>
+  <meta property="og:image" content="<?php print $meta['url']; ?><?php print $meta['assets_path']; ?><?php print $meta['thumbnail']; ?>"/>
   <meta property="og:url" content="<?php print $meta['url']; ?>"/>
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@<?php print $meta['twitter']; ?>" />
   <meta name="twitter:title" content="<?php print $meta['title']; ?>" />
   <meta name="twitter:description" content="<?php print $meta['description']; ?>" />
-  <meta name="twitter:image" content="<?php print $meta['thumbnail']; ?>" />
+  <meta name="twitter:image" content="<?php print $meta['url']; ?><?php print $meta['assets_path']; ?><?php print $meta['thumbnail']; ?>" />
   <meta name="twitter:url" content="<?php print $meta['url']; ?>" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
