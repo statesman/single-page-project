@@ -7,13 +7,13 @@
   // update these fields
   // assets_path is after projects.statesman.com to root of project
   $meta = array(
+    "url" => "http://projects.statesman.com/news/single-page-project/",
+    "assets_path" => "assets/",
     "title" => "Single page project | Statesman.com",
     "description" => "Description for single-page-project.",
     "thumbnail" => "share.jpg",
     "shortcut_icon" => "favicon.ico",
     "apple_touch_icon" => "favicon-apple-touch-icon.png",
-    "url" => "http://projects.statesman.com/news/single-page-project/",
-    "assets_path" => "assets/"
     "twitter" => "aasinteractive",
     "authors" => array(
         array("name" => "John Doe", "twitter" => "john_doe"),
