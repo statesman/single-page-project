@@ -11,7 +11,7 @@
     "assets_path" => "assets/",
     "title" => "Single page project | Statesman.com",
     "description" => "Description for single-page-project.",
-    "thumbnail" => "share.jpg",
+    "thumbnail" => "share.png",
     "shortcut_icon" => "favicon.ico",
     "apple_touch_icon" => "favicon-apple-touch-icon.png",
     "twitter" => "aasinteractive",
