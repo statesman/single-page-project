@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,20 +68,20 @@
         <span class="icon-bar"></span>
       </button>
 
-        <a class="navbar-brand" href="http://www.statesman.com/" target="_blank">
-        <img class="visible-xs visible-sm" width="103" height="26" src="assets/logo-short-black.png" />
-        <img class="hidden-xs hidden-sm" width="273" height="26" src="assets/logo.png" />
+        <a class="navbar-brand" href="http://www.statesman.com/" title="Statesman logo" target="_blank">
+        <img class="visible-xs visible-sm" width="103" height="26" role="presentation" src="assets/logo-short-black.png" />
+        <img class="hidden-xs hidden-sm" width="273" height="26" role="presentation" src="assets/logo.png" />
         </a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="./">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li>
-        <li class="visible-xs small-social"><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($meta['url']); ?>"><i class="fa fa-facebook-square"></i></a><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode($meta['url']); ?>&via=<?php print urlencode($meta['twitter']); ?>&text=<?php print urlencode($meta['title']); ?>"><i class="fa fa-twitter"></i></a></li>
+        <li class="visible-xs small-social"><a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($meta['url']); ?>"><i class="fa fa-facebook-square"></i></a><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=<?php echo urlencode($meta['url']); ?>&via=<?php print urlencode($meta['twitter']); ?>&text=<?php print urlencode($meta['title']); ?>"><i class="fa fa-twitter"></i></a></li>
       </ul>
         <ul class="nav navbar-nav navbar-right social hidden-xs">
-          <li><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($meta['url']); ?>"><i class="fa fa-facebook-square"></i></a></li>
-          <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode($meta['url']); ?>&via=<?php print urlencode($meta['twitter']); ?>&text=<?php print urlencode($meta['title']); ?>"><i class="fa fa-twitter"></i></a></li>
+          <li><a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($meta['url']); ?>"><i class="fa fa-facebook-square"></i></a></li>
+          <li><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=<?php echo urlencode($meta['url']); ?>&via=<?php print urlencode($meta['twitter']); ?>&text=<?php print urlencode($meta['title']); ?>"><i class="fa fa-twitter"></i></a></li>
         </ul>
     </div>
   </div>
