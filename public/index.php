@@ -12,6 +12,7 @@
     "title" => "Single page project | Statesman.com",
     "description" => "Description for single-page-project.",
     "thumbnail" => "share.png",
+    "thumbnail_fb" => "share-fb.png",
     "shortcut_icon" => "favicon.ico",
     "apple_touch_icon" => "favicon-apple-touch-icon.png",
     "twitter" => "aasinteractive",
@@ -37,7 +38,7 @@
 
   <meta property="og:title" content="<?php print $meta['title']; ?>"/>
   <meta property="og:description" content="<?php print $meta['description']; ?>"/>
-  <meta property="og:image" content="<?php print $meta['url']; ?><?php print $meta['assets_path']; ?><?php print $meta['thumbnail']; ?>"/>
+  <meta property="og:image" content="<?php print $meta['url']; ?><?php print $meta['assets_path']; ?><?php print $meta['thumbnail_fb']; ?>"/>
   <meta property="og:url" content="<?php print $meta['url']; ?>"/>
 
   <meta name="twitter:card" content="summary" />
