@@ -3,6 +3,8 @@ Single-page project
 
 Framework for a single page project, though it could be multiple pages. Just less complex than our immersive-template setup.
 
+This template require PHP be available on the server, so for use with our cmgdtcpxahost.cmg.int server. We favor publishing to S3 these days, which does not support PHP.
+
 ## Steps when you set up a project
 
 * Use `package.json` and run `npm install`
@@ -19,6 +21,11 @@ There is a `public` folder that has the published files:
 * dist: where js and css is compiled
 * fonts: for font-awesome
 * includes: files for metrics, advertising and other includes
+
+### Metrics
+You'll need to update the `cmg-head-metadata.inc` include.
+- [AAS BigJ Metadata attribues for data-bakery](https://docs.google.com/spreadsheets/d/1_jJAlKcxF_QviB3lK29l3LG2cnYUYM-sEJttRJ5HPYA/edit#gid=0) has explanations of all the metatags.
+- [Big J Documentation Supplement: Newspaper Categories List](https://docs.google.com/spreadsheets/d/19Jtbqyp1WI5TJa8F2l_FvKZF78_xZvIJqeUzz6F8l90/edit#gid=1188551864) has site-specific info for cmg:siteSection, cmg:category and cmg:mainSection.
 
 ### Src folder
 The `src` folder is for components that are used by grunt tasks and copied into the `public/dist` folder:
